@@ -25,6 +25,15 @@ body {
     )
     rgb(var(--background-start-rgb));
 } */
+
+.bg-primary{
+  background-color:'#6F6FDB' ;
+}
+.bg-secondary{
+  background-color:'#AF6BE8' ;
+}
+
+
 .home{
 
   background: rgb(175, 107, 232);
