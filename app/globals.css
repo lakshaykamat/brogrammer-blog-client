@@ -26,20 +26,23 @@ body {
     rgb(var(--background-start-rgb));
 } */
 
-.bg-primary{
-  background-color:'#6F6FDB' ;
+.bg_primary{
+  background:#6f6fdb ;
 }
-.bg-secondary{
-  background-color:'#AF6BE8' ;
+.bg_secondary{
+  background:#AF6BE8 ;
+  background:#4e6199 ;
 }
 
 
-.home{
-
+.home_gradient{
   background: rgb(175, 107, 232);
   background: linear-gradient(
     90deg,
     rgba(175, 107, 232, 0.8419700643929446) 20%,
     rgba(111, 111, 219, 0.8335667030484069) 76%
     );
+
+    background: rgb(111,111,219);
+    background: linear-gradient(90deg, rgba(111,111,219,0.7831465349811799) 33%, rgba(78,97,153,0.4161997562696954) 66%); 
   }
