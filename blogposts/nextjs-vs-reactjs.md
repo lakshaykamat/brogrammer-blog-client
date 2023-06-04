@@ -1,6 +1,9 @@
 ---
 title: 'Next.js vs React.js: Choosing the Right Framework for Your Web Development'
 date: '02-06-2023'
+author: 'Lakshay'
+description: 'When it comes to web development with JavaScript, two popular frameworks often come to mind: Next.js and React.js.'
+coverImage: 'https://www.educative.io/v2api/editorpage/6452289848475648/image/5294398307303424'
 ---
 
 

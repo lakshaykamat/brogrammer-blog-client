@@ -1,6 +1,9 @@
 ---
 title: 'Mastering JavaScript ES6: Key Features and Syntax'
 date: '02-06-2023'
+author: 'Lakshay'
+description: 'avaScript ES6 (ECMAScript 2015) introduced a range of powerful features and syntax enhancements that significantly improved the developer experience and code maintainability. '
+coverImage: 'https://miro.medium.com/v2/resize:fit:840/1*8nfBRAssY0DuETYwdwyqqw.png'
 ---
 
 # 
