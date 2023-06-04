@@ -12,7 +12,8 @@ export const generateStaticParams = () =>{
         postId:post.id
     }))
 }
-const generateMetadata = ({ params }: { params: { postId: string } }) => {
+
+export const generateMetadata = ({ params }: { params: { postId: string } }) => {
 
     const posts = getSortedPostsData()
     const { postId } = params
