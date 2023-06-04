@@ -39,14 +39,15 @@ const page = async({ params }: { params: { postId: string } }) => {
         return notFound()
     }
 
-    const {title,date,contentHtml} = await getPostData(postId)
+    const {title,date,author,coverImage,contentHtml} = await getPostData(postId)
 
     const pubDate = getFormattedDate(date)
     return (
-        <main className="px-6 prose prose-xl prose-slate dark:prose-invert mx-auto">
-            <h1 className="text-5xl mt-12 mb-0">{title}</h1>
-            <p className="mt-0">
-                {pubDate}
+        <main className="p-6 prose prose-base lg:prose-lg prose-slate dark:prose-invert mx-auto">
+            <img className="rounded mt-12 w-full object-cover" src={coverImage}/>
+            <h1 className="mt-12 lg:leading-snug">{title}</h1>
+            <p className="mt-2">
+                {pubDate}<span> | </span>{author}
             </p>
             <article>
                 <section dangerouslySetInnerHTML={{ __html: contentHtml }} />
