@@ -1,6 +1,6 @@
 ---
 title: 'GitHub vs GitLab: Choosing the Right Version Control System'
-date: '02-06-2023'
+date: '02-02-2023'
 author: 'Lakshay'
 description: 'In the world of software development, version control systems (VCS) play a crucial role in managing codebases, facilitating collaboration, and ensuring project integrity. Two popular options in this realm are GitHub and GitLab.'
 coverImage: 'https://assets.website-files.com/634681057b887c6f4830fae2/6367ddc8befaed3f55f96807_6259f59c7ee74ee88c1114a8_github-vs-gitlab.png'
