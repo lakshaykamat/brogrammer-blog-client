@@ -11,12 +11,12 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <div className="hidden md:flex md:mx-5 items-center md:space-x-4">
-                        <Link href="/" className="rounded-md text-gray-200 px-3 py-2 hover:text-gray-800 hover:bg-slate-100 font-bold">
+                        <Link href="/" className="rounded-md text-gray-200 px-3 py-2 hover:bg-[#0D567A] font-bold">
                             Home            </Link>
-                        <Link href="/about" className="rounded-md text-gray-200 px-3 py-2 hover:text-gray-800 hover:bg-slate-100 font-bold">
+                        <Link href="/about" className="rounded-md text-gray-200 px-3 py-2 hover:bg-[#0D567A] font-bold">
                             About
                         </Link>
-                        <Link href="/contact" className="rounded-md text-gray-200 px-3 py-2 hover:text-gray-800 hover:bg-slate-100 font-bold">
+                        <Link href="/contact" className="rounded-md text-gray-200 px-3 py-2 hover:bg-[#0D567A] font-bold">
                             Contact
                         </Link>
 
