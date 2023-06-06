@@ -6,7 +6,7 @@ type Props = {};
 const Footer = (props: Props) => {
   return (
 
-<footer className="bg-sky-600 text-slate-100 dark:bg-gray-900">
+<footer className="bg-sky-600 text-slate-200">
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -53,13 +53,13 @@ const Footer = (props: Props) => {
       </div>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-slate-800 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" className="hover:underline">Brogrammer</a>. All Rights Reserved.
+          <span className="text-sm text-slate-200 dark:text-slate-100 sm:text-center">© 2023 <a href="https://flowbite.com/" className="hover:underline">Brogrammer</a>. All Rights Reserved.
           </span>
           <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-              <BsFacebook className="text-slate-700 hover:text-slate-900 dark:hover:text-white"/>
-              <BsInstagram className="text-slate-700 hover:text-slate-900 dark:hover:text-white"/>
-              <BsTwitter className="text-slate-700 hover:text-slate-900 dark:hover:text-white"/>
-              <BsGithub className="text-slate-700 hover:text-slate-900 dark:hover:text-white"/>
+              <BsFacebook className="text- w-6 h-6 hover:text-slate-900 dark:hover:text-white"/>
+              <BsInstagram className="text-white w-6 h-6 hover:text-slate-900 dark:hover:text-white"/>
+              <BsTwitter className="text-white w-6 h-6 hover:text-slate-900 dark:hover:text-white"/>
+              <BsGithub className="text-white w-6 h-6 hover:text-slate-900 dark:hover:text-white"/>
           </div>
       </div>
     </div>
