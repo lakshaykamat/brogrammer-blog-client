@@ -1,9 +1,7 @@
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import './globals.css'
-import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Brogrammer Blog',
@@ -17,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-sky-100 dark:text-slate-200 dark:bg-sky-900`}>
+      <body className={`bg-sky-100 dark:text-slate-200 dark:bg-sky-950 `}>
         <Navbar/>
         {children}
         <Footer/>
