@@ -8,7 +8,7 @@ export default async function getAllPost() {
     cache: 'no-store',
     method: 'get',
     maxBodyLength: Infinity,
-    url: 'http://127.0.0.1:1337/api/blog-articles/?populate=*&sort=creation%3Adesc',
+    url: `${process.env.API_URL}blog-articles/?populate=*&sort=createdAt%3Adesc`,
     headers: {
       'Authorization': `Bearer ${token.jwt}`
     }
@@ -25,3 +25,4 @@ export default async function getAllPost() {
   }
 
 }
+

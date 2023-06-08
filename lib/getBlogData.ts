@@ -8,7 +8,7 @@ export const getBlogData = async(id:string)=>{
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: `http://127.0.0.1:1337/api/blog-articles/?filters[slug][$eq]=${id}`,
+        url: `${process.env.API_URL}blog-articles/?filters[slug][$eq]=${id}`,
         headers: { 
           'Authorization': `Bearer ${token.jwt}`
         }
