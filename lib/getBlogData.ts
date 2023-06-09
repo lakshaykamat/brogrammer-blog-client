@@ -1,9 +1,9 @@
 import axios from "axios";
 import { getToken } from "./getToken";
+import { BlogPost } from "@/types"
 
 
-
-export const getBlogData = async(id:string)=>{
+export const getBlogData = async(id:string):Promise<BlogPost>=>{
   const token = await getToken()
     let config = {
         method: 'get',

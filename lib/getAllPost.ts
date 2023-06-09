@@ -1,11 +1,11 @@
+import { BlogPost } from "@/types"
 import axios from 'axios'
 import { getToken } from './getToken';
-export default async function getAllPost() {
+export default async function getAllPost():Promise<BlogPost> {
   const token = await getToken()
 
 
   let config = {
-    cache: 'no-store',
     method: 'get',
     maxBodyLength: Infinity,
     url: `${process.env.API_URL}blog-articles/?populate=*&sort=createdAt%3Adesc`,

@@ -7,7 +7,6 @@ export const getToken = async () => {
     });
   
     let config = {
-      cache: 'no-store',
       method: 'post',
       maxBodyLength: Infinity,
       url: `${process.env.API_URL}auth/local`,

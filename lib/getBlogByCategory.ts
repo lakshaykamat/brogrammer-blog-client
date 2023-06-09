@@ -1,7 +1,8 @@
+import { BlogPost } from "@/types"
 import axios from "axios";
 import { getToken } from "./getToken";
 
-export const getBlogsByCategory = async (category:string) => {
+export const getBlogsByCategory = async (category:string):Promise<BlogPost> => {
     const token = await getToken()
     let config = {
         method: 'get',

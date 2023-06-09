@@ -1,8 +1,8 @@
 import axios from "axios";
 import { getToken } from "./getToken";
+import {Categories } from "@/types"
 
-
-export const getCategories = async () => {
+export const getCategories = async ():Promise<Categories> => {
   const token = await getToken()
   let config = {
     method: 'get',
