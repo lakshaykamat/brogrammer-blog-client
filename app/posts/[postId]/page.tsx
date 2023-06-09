@@ -14,7 +14,7 @@ export const generateMetadata = async ({ params }: { params: { postId: string } 
 
     
 
-    if (!post.data[0]) {
+    if (post.data.length <= 0) {
         return {
             title: 'Post Not Found'
         }
@@ -36,7 +36,7 @@ const page = async ({ params }: { params: { postId: string } }) => {
     const { postId } = params
     const md = new MarkdownIt();
     const post = await fetchBlogContent(postId)
-    if(!post.data[0]) return notFound()
+    if(post.data.length <= 0) return notFound()
     const { coverImageURL, author, title, creation, content } = post.data[0].attributes
     const htmlContent = md.render(content)
 
