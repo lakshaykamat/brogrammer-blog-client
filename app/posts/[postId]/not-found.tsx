@@ -4,7 +4,7 @@ type Props = {}
 
 const NotFound = (props: Props) => {
   return (
-    <div>not-found</div>
+    <div className='min-h-screen'>Page not found</div>
   )
 }
 export default NotFound
