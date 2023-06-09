@@ -8,9 +8,9 @@ import BlogCard from './components/BlogCard';
 import Category from './components/Category';
 import JoinCommunity from './components/JoinCommunity';
 
-type Props = {}
 
 const Home = async () => {
+
   const posts = await fetchAllBlogs()
   const catgories = await fetchCategories()
   // useEffect(() => {
@@ -58,7 +58,7 @@ const Home = async () => {
         {/* lg:visible hidden One Big Card in left and other post in right vertically */}
         <div className="hidden lg:visible lg:flex justify-between gap-12 w-full">
 
-        <BlogCard
+          <BlogCard
             imgURL={posts.data[0].attributes.coverImageURL}
             width='FULL'
             altTxt={posts.data[0].attributes.title}
@@ -70,8 +70,8 @@ const Home = async () => {
 
           <div className="flex flex-col gap-6 w-[45%]">
 
-          {
-              posts.data.slice(1,3).map((item, index) => {
+            {
+              posts.data.slice(1, 3).map((item, index) => {
                 return <BlogCard
                   key={index}
                   width="FULL"
@@ -101,7 +101,7 @@ const Home = async () => {
 
           <div className="flex gap-6 flex-col justify-stretch items-stretch  md:flex-row">
             {
-              posts.data.slice(1,3).map((item, index) => {
+              posts.data.slice(1, 3).map((item, index) => {
                 return <BlogCard
                   key={index}
                   width="HALF"
@@ -125,23 +125,15 @@ const Home = async () => {
       {/* Discover Latest in */}
       <h1 className='text-center text-3xl font-bold mt-12'>Discover Latest in...</h1>
       {
-        catgories.data.map((item,index)=>{
-          return <Category 
-          key={index} 
-          name={item.attributes.name}/>
+        catgories.data.map((item, index) => {
+          return <Category
+            key={index}
+            name={item.attributes.name} />
         })
       }
-      <JoinCommunity/>
+      <JoinCommunity />
     </div >
   )
 }
 
-export async function generateStaticParams() {
-
-  const posts = await fetchAllBlogs()
-
-  return posts.data.map(post => (
-    { postId: post.attributes.slug }
-  ))
-}
 export default Home
