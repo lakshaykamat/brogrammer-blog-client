@@ -30,6 +30,7 @@
     "remark": "^14.0.3",
     "remark-html": "^15.0.2",
     "scrollreveal": "^4.0.9",
+    "sharp": "^0.32.1",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.3"
   },
