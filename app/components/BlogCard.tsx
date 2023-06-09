@@ -1,5 +1,5 @@
-import getFormattedDate from '@/lib/getFormattedDate'
-import { getHeightAndWidth } from '@/lib/getHeightAndWidth'
+import getFormattedDate from '@/utils/getFormattedDate'
+import { getHeightAndWidth } from '@/utils/getHeightAndWidth'
 import { BlogPost } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'

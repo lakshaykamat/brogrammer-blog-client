@@ -1,10 +1,11 @@
 import { fetchTeam } from '@/lib/fetchData'
-import { getHeightAndWidth } from '@/lib/getHeightAndWidth'
+import { getHeightAndWidth } from '@/utils/getHeightAndWidth'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { BsGithub, BsInstagram } from 'react-icons/bs'
-
+import Loading from '../loading'
+import { Suspense } from 'react'
 const Team = async () => {
   const team = await fetchTeam()
 
@@ -18,14 +19,14 @@ const Team = async () => {
         <div className="flex flex-col lg:flex-row m-auto justify-around items-center sm:items-start">
           {
             team.data.map((person, index) => {
-              return <ProfileCard
-                key={index}
-                name={person.attributes.name}
-                bio={person.attributes.bio}
-                designation={person.attributes.designation}
-                instagram={person.attributes.instagram}
-                github={person.attributes.github}
-                pfp={person.attributes.pfp} />
+              return <Suspense key={index} fallback={<Loading />}>
+                <ProfileCard
+                  name={person.attributes.name}
+                  bio={person.attributes.bio}
+                  designation={person.attributes.designation}
+                  instagram={person.attributes.instagram}
+                  github={person.attributes.github}
+                  pfp={person.attributes.pfp} /></Suspense>
             })
           }
         </div>
@@ -34,12 +35,12 @@ const Team = async () => {
   )
 }
 type TeamProps = {
-  name:string,
-  bio:string,
-  designation:string,
-  pfp:string,
-  github:string,
-  instagram:string
+  name: string,
+  bio: string,
+  designation: string,
+  pfp: string,
+  github: string,
+  instagram: string
 }
 const ProfileCard = async ({ name, bio, designation, pfp, github, instagram }: TeamProps) => {
   const size = await getHeightAndWidth(pfp)
@@ -58,7 +59,7 @@ const ProfileCard = async ({ name, bio, designation, pfp, github, instagram }: T
           <p className=" text-slate-500 mb-4">{bio}</p>
           <span className='inline-flex gap-3'>
             <Link href={`https://www.instagram.com/${instagram}/`} target='_blank' className='text-gray-500'>
-              <BsInstagram className="w-6 h-6 text-gray-400 hover:text-gray-600 hover:dark:text-gray-200"/>
+              <BsInstagram className="w-6 h-6 text-gray-400 hover:text-gray-600 hover:dark:text-gray-200" />
             </Link>
             <Link href={`https://www.github.com/${github}/`} target='_blank'><BsGithub className="w-6 h-6 text-gray-400 hover:text-gray-600 hover:dark:text-gray-200" /></Link>
           </span>

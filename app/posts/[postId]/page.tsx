@@ -1,5 +1,5 @@
 import React from 'react'
-import getFormattedDate from '@/lib/getFormattedDate'
+import getFormattedDate from '@/utils/getFormattedDate'
 import Link from 'next/link'
 import MarkdownIt from 'markdown-it';
 import NewsLetter from './components/NewsLetter'

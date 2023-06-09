@@ -7,7 +7,8 @@ import CTA from './components/CTA';
 import BlogCard from './components/BlogCard';
 import Category from './components/Category';
 import JoinCommunity from './components/JoinCommunity';
-
+import { Suspense } from 'react'
+import Loading from './loading';
 
 const Home = async () => {
 
@@ -47,7 +48,7 @@ const Home = async () => {
   return (
     <div>
 
-      <CTA />
+      <CTA categories={catgories} />
 
 
       <div className="m-12 xl:mx-48">
@@ -57,7 +58,7 @@ const Home = async () => {
         {/* Most recent post */}
         {/* lg:visible hidden One Big Card in left and other post in right vertically */}
         <div className="hidden lg:visible lg:flex justify-between gap-12 w-full">
-
+        <Suspense fallback={<Loading/>}>
           <BlogCard
             imgURL={posts.data[0].attributes.coverImageURL}
             width='FULL'
@@ -67,13 +68,14 @@ const Home = async () => {
             slug={posts.data[0].attributes.slug}
             title={posts.data[0].attributes.title}
           />
+          </Suspense>
 
           <div className="flex flex-col gap-6 w-[45%]">
 
             {
               posts.data.slice(1, 3).map((item, index) => {
-                return <BlogCard
-                  key={index}
+                return <Suspense key={index} fallback={<Loading/>}>
+                  <BlogCard
                   width="FULL"
                   imgURL={item.attributes.coverImageURL}
                   altTxt={item.attributes.title}
@@ -82,6 +84,7 @@ const Home = async () => {
                   slug={item.attributes.slug}
                   title={item.attributes.title}
                 />
+                </Suspense>
               })
             }
           </div>
@@ -89,6 +92,7 @@ const Home = async () => {
 
         {/* Visible at smaller screens */}
         <div className="lg:hidden">
+        <Suspense fallback={<Loading/>}>
           <BlogCard
             imgURL={posts.data[0].attributes.coverImageURL}
             width='FULL'
@@ -98,12 +102,12 @@ const Home = async () => {
             slug={posts.data[0].attributes.slug}
             title={posts.data[0].attributes.title}
           />
+          </Suspense>
 
           <div className="flex gap-6 flex-col justify-stretch items-stretch  md:flex-row">
             {
               posts.data.slice(1, 3).map((item, index) => {
-                return <BlogCard
-                  key={index}
+                return <Suspense key={index} fallback={<Loading/>}><BlogCard
                   width="HALF"
                   imgURL={item.attributes.coverImageURL}
                   altTxt={item.attributes.title}
@@ -112,6 +116,7 @@ const Home = async () => {
                   slug={item.attributes.slug}
                   title={item.attributes.title}
                 />
+                </Suspense>
               })
             }
           </div>
@@ -126,9 +131,9 @@ const Home = async () => {
       <h1 className='text-center text-3xl font-bold mt-12'>Discover Latest in...</h1>
       {
         catgories.data.map((item, index) => {
-          return <Category
+          return <Suspense key={index} fallback={<Loading/>}><Category
             key={index}
-            name={item.attributes.name} />
+            name={item.attributes.name} /></Suspense>
         })
       }
       <JoinCommunity />
