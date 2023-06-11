@@ -1,9 +1,18 @@
-import React from 'react'
-import { BsFacebook, BsInstagram, BsTwitter, BsWhatsapp } from 'react-icons/bs'
+'use client'
+import { BsFacebook, BsTwitter, BsWhatsapp } from 'react-icons/bs'
+import {
+    FacebookShareButton,
+    TwitterShareButton,
+    WhatsappShareButton
+} from "react-share";
 
-type Props = {}
+type Props = {
+    title: string,
+    url: string,
+    hastag: string
+}
 
-const NewsLetter = (props: Props) => {
+const NewsLetter = ({ title, url, hastag }: Props) => {
     return (
         <section className="py-8">
             <div className="container mx-auto px-4">
@@ -27,10 +36,17 @@ const NewsLetter = (props: Props) => {
                 </form>
                 <div className='flex gap-3 mt-6'>
                     <span className='text-base'>Share On</span>
-                    <BsInstagram className='w-6 h-6' />
-                    <BsFacebook className='w-6 h-6' />
-                    <BsWhatsapp className='w-6 h-6' />
-                    <BsTwitter className='w-6 h-6' />
+                    <WhatsappShareButton title={title} url={url}>
+                        <BsWhatsapp className='w-6 h-6' />
+                    </WhatsappShareButton>
+
+                    <TwitterShareButton title={title} hashtags={["#gro"]} url={url}>
+                        <BsTwitter className='w-6 h-6' />
+                    </TwitterShareButton>
+
+                    <FacebookShareButton quote={title} hashtag={hastag} url={url}>
+                        <BsFacebook className='w-6 h-6' />
+                    </FacebookShareButton>
                 </div>
             </div>
         </section>

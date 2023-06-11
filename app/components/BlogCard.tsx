@@ -1,6 +1,5 @@
 import getFormattedDate from '@/utils/getFormattedDate'
 import { getHeightAndWidth } from '@/utils/getHeightAndWidth'
-import { BlogPost } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -16,10 +15,7 @@ type Props = {
 }
 
 const BlogCard = async ({ imgURL, altTxt, creationDate, author, slug, title, width }: Props): Promise<React.JSX.Element> => {
-  const CLASSES = {
-    class1: "relative overflow-hidden items-center text-gray-800 dark:text-slate-200 justify-stretch rounded-lg",
-    class2: "w-auto md:w-[50%] relative overflow-hidden items-center text-gray-800 dark:text-slate-200 justify-stretch rounded-lg"
-  }
+
   const size = await getHeightAndWidth(imgURL)
   return (
     <div className={`${width == "HALF" ? "w-auto md:w-[50%]" : "relative overflow-hidden items-center text-gray-800 dark:text-slate-200 justify-stretch rounded-lg"} `}>
