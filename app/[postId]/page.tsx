@@ -61,7 +61,7 @@ const page = async ({ params }: { params: { postId: string } }) => {
                 </p>
             </article>
 
-            <NewsLetter />
+            <NewsLetter title={title} url={"$"} hastag=''/>
 
         </main>
     )
