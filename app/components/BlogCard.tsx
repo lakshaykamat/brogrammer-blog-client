@@ -28,7 +28,7 @@ const BlogCard = async ({ imgURL, altTxt, creationDate, author, slug, title, wid
       </div>
       <div className="flex flex-col">
         <Link
-          href={`/posts/${slug}`}
+          href={`/${slug}`}
           className="text-lg xl:text-2xl mb-4 mt-2 font-bold"
         >
           {title}
