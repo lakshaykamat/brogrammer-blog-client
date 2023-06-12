@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { BsGithub, BsInstagram } from 'react-icons/bs'
-import Loading from '../loading'
 import { Suspense } from 'react'
 import TeamSkeleton from './components/TeamSkeleton'
 const Team = async () => {

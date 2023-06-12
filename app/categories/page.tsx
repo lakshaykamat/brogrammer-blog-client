@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import {Suspense} from 'react'
 import Loading from '../loading'
+import Skeleton from 'react-loading-skeleton'
 
 type Props = {}
 
@@ -16,7 +17,7 @@ const Categories = async(props: Props) => {
             <section className="grid grid-cols-1 justify-self-stretch sm:grid-cols-2 xl:grid-cols-3 gap-6">
                 {
                     data.data.map((item,index)=>{
-                        return <Suspense key={index} fallback={<Loading />}><CategoryButton key={item.id} name={item.attributes.name}/></Suspense>
+                        return <Suspense key={index} fallback={<Skeleton/>}><CategoryButton key={item.id} name={item.attributes.name}/></Suspense>
                     })
                 }
             </section>

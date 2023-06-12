@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { BsInstagram, BsDiscord, BsGithub, BsFacebook, BsTwitter } from "react-icons/bs";
+import { BsInstagram, BsGithub, BsFacebook, BsTwitter } from "react-icons/bs";
 
 type Props = {};
 
