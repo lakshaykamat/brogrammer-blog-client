@@ -18,7 +18,7 @@ const BlogCard = async ({ imgURL, altTxt, creationDate, author, slug, title, wid
 
   const size = await getHeightAndWidth(imgURL)
   return (
-    <div className={`${width == "HALF" ? "w-auto md:w-[50%]" : "relative overflow-hidden items-center text-gray-800 dark:text-slate-200 justify-stretch rounded-lg"} `}>
+    <div className={`${width == "HALF" ? "w-auto md:w-[50%]" : " overflow-hidden items-center text-gray-800 dark:text-slate-200 justify-stretch rounded-lg"} `}>
       <div>
         <Image src={imgURL} alt={altTxt} className="transition-all hover:scale-105 w-full h-auto object-cover mb-4 rounded-lg" width={size.width} height={size.height} priority/>
       </div>

@@ -1,6 +1,3 @@
-// "use client"
-import Link from 'next/link';
-// import ScrollReveal from 'scrollreveal';
 import NewsletterForm from './components/NewsLetterForm';
 import { fetchAllBlogs, fetchCategories } from '@/lib/fetchData';
 import CTA from './components/CTA';
@@ -8,7 +5,8 @@ import BlogCard from './components/BlogCard';
 import Category from './components/Category';
 import JoinCommunity from './components/JoinCommunity';
 import { Suspense } from 'react'
-import Loading from './loading';
+import { CategoryParent} from './components/CategorySkeleton'
+import CardSkeleton from './components/CardSkeleton';
 
 const Home = async () => {
 
@@ -58,33 +56,34 @@ const Home = async () => {
         {/* Most recent post */}
         {/* lg:visible hidden One Big Card in left and other post in right vertically */}
         <div className="hidden lg:visible lg:flex justify-between gap-12 w-full">
-        <Suspense fallback={<Loading/>}>
-          <BlogCard
-            imgURL={posts.data[0].attributes.coverImageURL}
-            width='FULL'
-            altTxt={posts.data[0].attributes.title}
-            creationDate={posts.data[0].attributes.creation}
-            author={posts.data[0].attributes.author}
-            slug={posts.data[0].attributes.slug}
-            title={posts.data[0].attributes.title}
-          />
+          <Suspense fallback={<CardSkeleton />}>
+            <BlogCard
+              imgURL={posts.data[0].attributes.coverImageURL}
+              width='FULL'
+              altTxt={posts.data[0].attributes.title}
+              creationDate={posts.data[0].attributes.creation}
+              author={posts.data[0].attributes.author}
+              slug={posts.data[0].attributes.slug}
+              title={posts.data[0].attributes.title}
+            />
           </Suspense>
 
           <div className="flex flex-col gap-6 w-[45%]">
-
             {
               posts.data.slice(1, 3).map((item, index) => {
-                return <Suspense key={index} fallback={<Loading/>}>
-                  <BlogCard
-                  width="FULL"
-                  imgURL={item.attributes.coverImageURL}
-                  altTxt={item.attributes.title}
-                  creationDate={item.attributes.creation}
-                  author={item.attributes.author}
-                  slug={item.attributes.slug}
-                  title={item.attributes.title}
-                />
-                </Suspense>
+                return (
+                  <Suspense key={index} fallback={<CardSkeleton />}>
+                    <BlogCard
+                      width="FULL"
+                      imgURL={item.attributes.coverImageURL}
+                      altTxt={item.attributes.title}
+                      creationDate={item.attributes.creation}
+                      author={item.attributes.author}
+                      slug={item.attributes.slug}
+                      title={item.attributes.title}
+                    />
+                  </Suspense>
+                )
               })
             }
           </div>
@@ -92,31 +91,33 @@ const Home = async () => {
 
         {/* Visible at smaller screens */}
         <div className="lg:hidden">
-        <Suspense fallback={<Loading/>}>
-          <BlogCard
-            imgURL={posts.data[0].attributes.coverImageURL}
-            width='FULL'
-            altTxt={posts.data[0].attributes.title}
-            creationDate={posts.data[0].attributes.creation}
-            author={posts.data[0].attributes.author}
-            slug={posts.data[0].attributes.slug}
-            title={posts.data[0].attributes.title}
-          />
+          <Suspense fallback={<CardSkeleton />}>
+            <BlogCard
+              imgURL={posts.data[0].attributes.coverImageURL}
+              width='FULL'
+              altTxt={posts.data[0].attributes.title}
+              creationDate={posts.data[0].attributes.creation}
+              author={posts.data[0].attributes.author}
+              slug={posts.data[0].attributes.slug}
+              title={posts.data[0].attributes.title}
+            />
           </Suspense>
 
           <div className="flex gap-6 flex-col justify-stretch items-stretch  md:flex-row">
             {
               posts.data.slice(1, 3).map((item, index) => {
-                return <Suspense key={index} fallback={<Loading/>}><BlogCard
-                  width="HALF"
-                  imgURL={item.attributes.coverImageURL}
-                  altTxt={item.attributes.title}
-                  creationDate={item.attributes.creation}
-                  author={item.attributes.author}
-                  slug={item.attributes.slug}
-                  title={item.attributes.title}
-                />
-                </Suspense>
+                return (
+                  <Suspense key={index} fallback={<CardSkeleton />}><BlogCard
+                    width="HALF"
+                    imgURL={item.attributes.coverImageURL}
+                    altTxt={item.attributes.title}
+                    creationDate={item.attributes.creation}
+                    author={item.attributes.author}
+                    slug={item.attributes.slug}
+                    title={item.attributes.title}
+                  />
+                  </Suspense>
+                )
               })
             }
           </div>
@@ -129,13 +130,21 @@ const Home = async () => {
       <NewsletterForm />
       {/* Discover Latest in */}
       <h1 className='text-center text-3xl font-bold mt-12'>Discover Latest in...</h1>
+      {/* <Skeleton  className="h-12" /> */}
+      {/* <div className='grid grid-cols-1 justify-self-stretch sm:grid-rows-2 xl:grid-cols-3 gap-6'> */}
       {
         catgories.data.map((item, index) => {
-          return <Suspense key={index} fallback={<Loading/>}><Category
+          return (
+            
+            <Suspense key={index} fallback={<CategoryParent/>}>
+            <Category
             key={index}
-            name={item.attributes.name} /></Suspense>
+            name={item.attributes.name} />
+            </Suspense>
+          )
         })
       }
+      {/* </div> */}
       <JoinCommunity />
     </div >
   )

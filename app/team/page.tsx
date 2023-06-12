@@ -6,6 +6,7 @@ import React from 'react'
 import { BsGithub, BsInstagram } from 'react-icons/bs'
 import Loading from '../loading'
 import { Suspense } from 'react'
+import TeamSkeleton from './components/TeamSkeleton'
 const Team = async () => {
   const team = await fetchTeam()
 
@@ -19,7 +20,10 @@ const Team = async () => {
         <div className="flex flex-col lg:flex-row m-auto justify-around items-center sm:items-start">
           {
             team.data.map((person, index) => {
-              return <Suspense key={index} fallback={<Loading />}>
+              return (
+                <>
+
+              <Suspense key={index} fallback={<TeamSkeleton/>}>
                 <ProfileCard
                   name={person.attributes.name}
                   bio={person.attributes.bio}
@@ -27,6 +31,8 @@ const Team = async () => {
                   instagram={person.attributes.instagram}
                   github={person.attributes.github}
                   pfp={person.attributes.pfp} /></Suspense>
+                  </>
+              )
             })
           }
         </div>
