@@ -14,21 +14,21 @@ export const generateMetadata = async ({ params }: { params: { postId: string } 
 
     
 
-    if (post.data.length <= 0) {
+    if (post.length <= 0) {
         return {
             title: 'Post Not Found'
         }
     }
-    const postData = post.data[0]
-    const postTitle = postData.attributes.title
+    const postData = post[0]
+    const postTitle = postData.title
     return {
         title: postTitle
     }
 }
 export async function generateStaticParams() {
     const blog = await fetchAllBlogs()
-    return blog.data.map((item) => {
-        { postId: item.attributes.slug }
+    return blog.map((item) => {
+        { postId: item.slug }
     })
 }
 const page = async ({ params }: { params: { postId: string } }) => {
@@ -36,16 +36,16 @@ const page = async ({ params }: { params: { postId: string } }) => {
     const { postId } = params
     const md = new MarkdownIt();
     const post = await fetchBlogContent(postId)
-    if(post.data.length <= 0) return notFound()
-    const { coverImageURL, author, title, creation, content } = post.data[0].attributes
-    const htmlContent = md.render(content)
+    if(post.length <= 0) return notFound()
+    const { image, author, title, publishedAt, body } = post[0]
+    const htmlContent = md.render(body)
 
     return (
         <main className="p-6 prose prose-base lg:prose-lg prose-slate dark:prose-invert flex flex-col lg:flex-row lg:mx-6 justify-between gap-6 max-w-full mx-auto sm:mx-12 md:mx-20">
 
             <article className='lg:max-w-[60%]'>
                 <Image
-                    src={coverImageURL}
+                    src={image}
                     alt={title}
                     quality={100}
                     width={750}
@@ -53,7 +53,7 @@ const page = async ({ params }: { params: { postId: string } }) => {
                 />
                 <h1 className="mt-12 lg:leading-snug">{title}</h1>
                 <p className="mt-2">
-                    {getFormattedDate(creation)}<span> | </span>{author}
+                    {getFormattedDate(publishedAt)}<span> | </span>{author}
                 </p>
                 <section dangerouslySetInnerHTML={{ __html: htmlContent }} />
                 <p>

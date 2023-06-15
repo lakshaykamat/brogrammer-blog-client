@@ -58,29 +58,29 @@ const Home = async () => {
         <div className="hidden lg:visible lg:flex justify-between gap-12 w-full">
           <Suspense fallback={<CardSkeleton />}>
             <BlogCard
-              imgURL={posts.data[0].attributes.coverImageURL}
+              imgURL={posts[0].image}
               width='FULL'
-              altTxt={posts.data[0].attributes.title}
-              creationDate={posts.data[0].attributes.creation}
-              author={posts.data[0].attributes.author}
-              slug={posts.data[0].attributes.slug}
-              title={posts.data[0].attributes.title}
+              altTxt={posts[0].title}
+              creationDate={posts[0].publishedAt}
+              author={posts[0].author}
+              slug={posts[0].slug}
+              title={posts[0].title}
             />
           </Suspense>
 
           <div className="flex flex-col gap-6 w-[45%]">
             {
-              posts.data.slice(1, 3).map((item, index) => {
+              posts.slice(1, 3).map((item, index) => {
                 return (
                   <Suspense key={index} fallback={<CardSkeleton />}>
                     <BlogCard
                       width="FULL"
-                      imgURL={item.attributes.coverImageURL}
-                      altTxt={item.attributes.title}
-                      creationDate={item.attributes.creation}
-                      author={item.attributes.author}
-                      slug={item.attributes.slug}
-                      title={item.attributes.title}
+                      imgURL={item.image}
+                      altTxt={item.title}
+                      creationDate={item.publishedAt}
+                      author={item.author}
+                      slug={item.slug}
+                      title={item.title}
                     />
                   </Suspense>
                 )
@@ -93,28 +93,28 @@ const Home = async () => {
         <div className="lg:hidden">
           <Suspense fallback={<CardSkeleton />}>
             <BlogCard
-              imgURL={posts.data[0].attributes.coverImageURL}
+              imgURL={posts[0].image}
               width='FULL'
-              altTxt={posts.data[0].attributes.title}
-              creationDate={posts.data[0].attributes.creation}
-              author={posts.data[0].attributes.author}
-              slug={posts.data[0].attributes.slug}
-              title={posts.data[0].attributes.title}
+              altTxt={posts[0].title}
+              creationDate={posts[0].publishedAt}
+              author={posts[0].author}
+              slug={posts[0].slug}
+              title={posts[0].title}
             />
           </Suspense>
 
           <div className="flex gap-6 flex-col justify-stretch items-stretch  md:flex-row">
             {
-              posts.data.slice(1, 3).map((item, index) => {
+              posts.slice(1, 3).map((item, index) => {
                 return (
                   <Suspense key={index} fallback={<CardSkeleton />}><BlogCard
-                    width="HALF"
-                    imgURL={item.attributes.coverImageURL}
-                    altTxt={item.attributes.title}
-                    creationDate={item.attributes.creation}
-                    author={item.attributes.author}
-                    slug={item.attributes.slug}
-                    title={item.attributes.title}
+                  width="HALF"
+                  imgURL={item.image}
+                  altTxt={item.title}
+                  creationDate={item.publishedAt}
+                  author={item.author}
+                  slug={item.slug}
+                  title={item.title}
                   />
                   </Suspense>
                 )
@@ -133,13 +133,13 @@ const Home = async () => {
       {/* <Skeleton  className="h-12" /> */}
       {/* <div className='grid grid-cols-1 justify-self-stretch sm:grid-rows-2 xl:grid-cols-3 gap-6'> */}
       {
-        catgories.data.map((item, index) => {
+        catgories.map((item, index) => {
           return (
             
             <Suspense key={index} fallback={<CategoryParent/>}>
             <Category
             key={index}
-            name={item.attributes.name} />
+            name={item} />
             </Suspense>
           )
         })
