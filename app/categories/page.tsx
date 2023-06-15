@@ -16,8 +16,8 @@ const Categories = async(props: Props) => {
             <hr className='mb-3'/>
             <section className="grid grid-cols-1 justify-self-stretch sm:grid-cols-2 xl:grid-cols-3 gap-6">
                 {
-                    data.data.map((item,index)=>{
-                        return <Suspense key={index} fallback={<Skeleton/>}><CategoryButton key={item.id} name={item.attributes.name}/></Suspense>
+                    data.map((item,index)=>{
+                        return <Suspense key={index} fallback={<Skeleton/>}><CategoryButton key={index} name={item}/></Suspense>
                     })
                 }
             </section>

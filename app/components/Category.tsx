@@ -11,17 +11,17 @@ type Props = {
 }
 const Category = async ({ name }: Props): Promise<React.JSX.Element> => {
     const blogs = await fetchBlogsByCategory(name)
-    const blogCards = blogs.data.map((item, index) => {
+    const blogCards = blogs.map((item, index) => {
         return(
         <Suspense key={index} fallback={<CategorySkeleton/>}>
             <BlogCard
                 width="FULL"
-                imgURL={item.attributes.coverImageURL}
-                altTxt={item.attributes.title}
-                creationDate={item.attributes.creation}
-                author={item.attributes.author}
-                slug={item.attributes.slug}
-                title={item.attributes.title}
+                imgURL={item.image}
+                altTxt={item.title}
+                creationDate={item.publishedAt}
+                author={item.author}
+                slug={item.slug}
+                title={item.title}
             /></Suspense>
         )
     })

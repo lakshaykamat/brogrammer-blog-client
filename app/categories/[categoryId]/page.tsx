@@ -7,25 +7,25 @@ import {Suspense} from 'react'
 
 export async function generateStaticParams() {
   const blog = await fetchCategories()
-  return blog.data.map((item) => {
-      { categoryId: item.attributes.name }
+  return blog.map((item) => {
+      { categoryId: item }
   })
 }
 const CategoryPage = async({ params }: { params: { categoryId: string } }) => {
     const { categoryId } = params
     const categoryName = removePercentEncoding(categoryId)
     const data = await fetchBlogsByCategory(categoryName)
-    const blogCards = data.data.map((item, index) => {
+    const blogCards = data.map((item, index) => {
       return( 
       <Suspense key={index} fallback={<CardSkeleton/>}><BlogCard
           key={index}
           width="FULL"
-          imgURL={item.attributes.coverImageURL}
-          altTxt={item.attributes.title}
-          creationDate={item.attributes.creation}
-          author={item.attributes.author}
-          slug={item.attributes.slug}
-          title={item.attributes.title}
+          imgURL={item.image}
+          altTxt={item.title}
+          creationDate={item.publishedAt}
+          author={item.author}
+          slug={item.slug}
+          title={item.title}
       />
       </Suspense>
       )

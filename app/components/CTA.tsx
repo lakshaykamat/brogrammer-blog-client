@@ -15,8 +15,8 @@ const CTA = ({categories}: Props) => {
             </div>
             <div className="grid grid-cols-1 justify-self-stretch sm:grid-cols-2 xl:grid-cols-3 gap-6 my-12">
                 {
-                    categories.data.slice(0,4).map((item)=>{
-                        return <Link href={`/categories/${item.attributes.name}`} className='text-slate-200 text-center dark:text-sky-950 px-16 py-4 text-base lg:text-lg drop-shadow-lg font-bold bg-sky-600 dark:bg-sky-400 rounded tracking-wider hover:bg-[#0D567A] hover:dark:bg-sky-600 transition-all' key={item.id}>{item.attributes.name}</Link>
+                    categories.slice(0,4).map((item)=>{
+                        return <Link href={`/categories/${item}`} className='text-slate-200 text-center dark:text-sky-950 px-16 py-4 text-base lg:text-lg drop-shadow-lg font-bold bg-sky-600 dark:bg-sky-400 rounded tracking-wider hover:bg-[#0D567A] hover:dark:bg-sky-600 transition-all' key={item}>{item}</Link>
                     })
                 }
             </div>

@@ -7,9 +7,9 @@ export const getCategories = async ():Promise<Categories> => {
   let config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `${process.env.API_URL}categories`,
+    url: `${process.env.API_URL}blog/category/all`,
     headers: {
-      'Authorization': `Bearer ${token.jwt}`
+      
     }
   };
   try {

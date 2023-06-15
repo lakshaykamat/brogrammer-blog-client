@@ -8,15 +8,14 @@ export default async function getAllPost():Promise<BlogPost> {
   let config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `${process.env.API_URL}blog-articles/?populate=*&sort=createdAt%3Adesc`,
-    headers: {
-      'Authorization': `Bearer ${token.jwt}`
-    }
+    url: `${process.env.API_URL}blog`,
+    headers: { }
   };
 
 
   try {
     const response = await axios.request(config);
+    console.log(response.data)
     return response.data
   }
   catch (error) {

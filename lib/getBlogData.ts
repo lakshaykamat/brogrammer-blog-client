@@ -8,9 +8,9 @@ export const getBlogData = async(id:string):Promise<BlogPost>=>{
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: `${process.env.API_URL}blog-articles/?filters[slug][$eq]=${id}`,
+        url: `${process.env.API_URL}blog?slug=${id}`,
         headers: { 
-          'Authorization': `Bearer ${token.jwt}`
+          
         }
       };
       try {

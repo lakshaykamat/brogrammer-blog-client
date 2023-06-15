@@ -7,9 +7,9 @@ export const getBlogsByCategory = async (category:string):Promise<BlogPost> => {
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: `${process.env.API_URL}blog-articles/?populate=*&filters[categoryF][$eq]=${category}&&sort=createdAt%3Adesc`,
+        url: `${process.env.API_URL}blog?category=${category}`,
         headers: {
-            'Authorization': `Bearer ${token.jwt}`
+            
         }
     };
 
