@@ -25,12 +25,12 @@ export const generateMetadata = async ({ params }: { params: { postId: string } 
         title: postTitle
     }
 }
-export async function generateStaticParams() {
-    const blog = await fetchAllBlogs()
-    return blog.map((item) => {
-        { postId: item.slug }
-    })
-}
+// export async function generateStaticParams() {
+//     const blog = await fetchAllBlogs()
+//     return blog.map((item) => {
+//         { postId: item.slug }
+//     })
+// }
 const page = async ({ params }: { params: { postId: string } }) => {
 
     const { postId } = params

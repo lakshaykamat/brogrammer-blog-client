@@ -5,12 +5,12 @@ import { removePercentEncoding } from '@/utils/removePercentEncoding'
 import React from 'react'
 import {Suspense} from 'react'
 
-export async function generateStaticParams() {
-  const blog = await fetchCategories()
-  return blog.map((item) => {
-      { categoryId: item }
-  })
-}
+// export async function generateStaticParams() {
+//   const blog = await fetchCategories()
+//   return blog.map((item) => {
+//       { categoryId: item }
+//   })
+// }
 const CategoryPage = async({ params }: { params: { categoryId: string } }) => {
     const { categoryId } = params
     const categoryName = removePercentEncoding(categoryId)
