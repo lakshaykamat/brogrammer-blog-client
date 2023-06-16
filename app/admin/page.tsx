@@ -1,6 +1,7 @@
 'use client'
 import { login } from '@/lib/admin/login'
 import React from 'react'
+import { useRouter } from 'next/navigation';
 
 type Props = {}
 
@@ -14,15 +15,26 @@ const Admin = (props: Props) => {
 import { useState } from 'react';
 
 function LoginForm() {
+  const { push } = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [err, setErr] = useState('');
 
-  const handleSubmit = () => {
-    const token = login(email, password)
-    // Perform login logic here
+  const handleSubmit = async(e) => {
+    e.preventDefault()
+    const data = await login(email, password)
+    console.log(data)
+    if(data.token){
+      localStorage.setItem("auth-token", data.token);
+      setEmail('');
+      setPassword('');
+      setErr('');
+      push('/admin/dashboard')
+    }
+    if(data.response){
+      setErr(data.response.data.message)
+    }
 
-    setEmail('');
-    setPassword('');
   };
 
   return (
@@ -61,6 +73,7 @@ function LoginForm() {
         >
           Login
         </button>
+        <p className='text-sm text-red-400 my-3'>{err}</p>
       </div>
     </form>
   );

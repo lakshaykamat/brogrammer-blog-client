@@ -1,8 +1,18 @@
-import React from 'react'
+'use client'
+
+import { useRouter } from "next/navigation"
+import { useEffect } from "react"
 
 type Props = {}
 
 const DashBoard = (props: Props) => {
+    const {push} = useRouter()
+    useEffect(()=>{
+        const data = localStorage.getItem('auth-token')
+        if(!data){
+            push('/admin/')
+        }
+    })
   return (
     
 <div className="relative overflow-x-auto shadow-md sm:rounded-lg">

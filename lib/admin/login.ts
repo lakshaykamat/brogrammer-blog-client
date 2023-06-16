@@ -8,7 +8,7 @@ export const login = async(email:string,password:string)=>{
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: `${process.env.API_URL}user/login`,
+        url: 'http://127.0.0.1:80/api/user/login',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -17,11 +17,12 @@ export const login = async(email:string,password:string)=>{
 
     try {
         const response = await axios.request(config);
-        console.log(JSON.stringify(response.data));
         return response.data
       }
       catch (error) {
+        return error;
         console.log(error);
       }
+
       
 }
