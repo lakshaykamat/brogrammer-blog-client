@@ -1,4 +1,5 @@
 'use client'
+import { login } from '@/lib/admin/login'
 import React from 'react'
 
 type Props = {}
@@ -16,22 +17,17 @@ function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const handleSubmit = () => {
+    const token = login(email, password)
     // Perform login logic here
-    console.log('Login form submitted!');
-    console.log('Email:', email);
-    console.log('Password:', password);
 
-    // Reset form fields
     setEmail('');
     setPassword('');
   };
 
   return (
-<form  className="max-w-4xl mx-auto my-12" onSubmit={handleSubmit}>
-  <h1 className='text-3xl my-6'>Login</h1>
+<form  className="max-w-xl mx-auto my-32" onSubmit={handleSubmit}>
+  <h1 className='text-3xl font-bold my-6'>Login</h1>
       <div className="mb-4">
         <label htmlFor="email" className="block mb-2 font-semibold">
           Email:
