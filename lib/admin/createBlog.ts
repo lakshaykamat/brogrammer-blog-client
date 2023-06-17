@@ -1,5 +1,5 @@
 import axios from 'axios'
-export const createBlog = async(token, title,description,image,slug,category,publishedAt,author,body)=>{
+export const createBlog = async(token:string, title:string,description:string,image:string,slug:string,category:string,publishedAt:string,author:string,body:string)=>{
     let data = JSON.stringify({
         "title": title,
         "description": description,
