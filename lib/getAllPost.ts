@@ -8,7 +8,7 @@ export default async function getAllPost():Promise<BlogPost> {
   let config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `${process.env.API_URL}blog`,
+    url: `https://portfilio-blog-page.onrender.com/api/blog`,
     headers: { }
   };
 
