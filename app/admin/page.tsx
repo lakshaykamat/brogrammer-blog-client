@@ -2,6 +2,7 @@
 import { login } from '@/lib/admin/login'
 import React from 'react'
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 type Props = {}
 
@@ -10,9 +11,6 @@ const Admin = (props: Props) => {
     <LoginForm/>
   )
 }
-// components/LoginForm.js
-
-import { useState } from 'react';
 
 function LoginForm() {
   const { push } = useRouter();
@@ -20,10 +18,9 @@ function LoginForm() {
   const [password, setPassword] = useState('');
   const [err, setErr] = useState('');
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async(e: { preventDefault: () => void; }) => {
     e.preventDefault()
     const data = await login(email, password)
-    console.log(data)
     if(data.token){
       localStorage.setItem("auth-token", data.token);
       setEmail('');
