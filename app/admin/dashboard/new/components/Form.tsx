@@ -3,7 +3,8 @@ import { useState } from 'react'
 
 type Props = {}
 
-const Form = ({ token }) => {
+const Form = (token:string) => {
+  console.log(token)
   const [category, setCategory] = useState('');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');

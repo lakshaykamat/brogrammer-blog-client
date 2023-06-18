@@ -1,20 +1,21 @@
 'use client'
-import  {useEffect} from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import Form from './components/Form';
+import PrivateComponent from '../components/Private';
 
 const CreatePostPage = () => {
-  const { push } = useRouter()
+  const [token, setToken] = useState<String | null>(null)
 
   useEffect(() => {
-    const data2 = localStorage.getItem('auth-token')
-  console.log(data2)
-  if (!data2) {
-    return push('/admin')
-  }else{
-    return <Form token={data2}/>
-  }
-  });
+      localStorage.getItem('auth-token');
+      const data = localStorage.getItem('auth-token')
+      setToken(data)
+  }, [token])
+  return (
+    <PrivateComponent>
+      <Form token={token} />
+    </PrivateComponent>
+  )
 }
 
 
