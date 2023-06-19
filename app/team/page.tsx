@@ -5,9 +5,8 @@ import TeamSkeleton from './components/TeamSkeleton'
 import ProfileCard from './components/ProfileCard'
 import { getTeam } from '@/lib/getTeam'
 const Team = async () => {
-  //TODO Map this array of objects and display the users in ProfileCard
   const team = await getTeam()
-  // console.log(team)
+
   return (
     <section className="body-font">
       <div className="container px-5 py-24 mx-auto">

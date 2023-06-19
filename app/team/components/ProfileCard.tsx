@@ -7,10 +7,11 @@ type TeamProps = {
     bio: string,
     designation: string,
     pfp: string,
-    github: string,
-    instagram: string
+    //TODO Add github and instagram later on team
+    // github: string,
+    // instagram: string
   }
-const ProfileCard = async ({ name, bio, designation, pfp, github, instagram }: TeamProps) => {
+const ProfileCard = async ({ name, bio, designation, pfp}: TeamProps) => {
     const size = await getHeightAndWidth(pfp)
     return (
       <div className="p-4">

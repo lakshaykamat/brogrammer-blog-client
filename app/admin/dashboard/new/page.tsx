@@ -4,12 +4,14 @@ import Form from './components/Form';
 import PrivateComponent from '../components/Private';
 
 const CreatePostPage = () => {
-  const [token, setToken] = useState<String | null>(null)
+  const [token, setToken] = useState<string>('')
 
   useEffect(() => {
       localStorage.getItem('auth-token');
       const data = localStorage.getItem('auth-token')
-      setToken(data)
+      if(data){
+        setToken(data)
+      }
   }, [token])
   return (
     <PrivateComponent>

@@ -1,10 +1,11 @@
 import { createBlog } from '@/lib/admin/createBlog';
 import { useState } from 'react'
 
-type Props = {}
+type Props = {
+  token: string
+}
 
-const Form = (token: string) => {
-  console.log(token)
+const Form = ({token}:Props) => {
   const [category, setCategory] = useState('');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');

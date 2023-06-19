@@ -1,7 +1,5 @@
-'use client'
 import Link from 'next/link'
 import Table from "./components/Table"
-import { use, useEffect } from 'react'
 import PrivateComponent from "./components/Private"
 type Props = {}
 
