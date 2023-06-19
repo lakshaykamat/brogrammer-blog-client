@@ -7,7 +7,7 @@ import { getTeam } from '@/lib/getTeam'
 const Team = async () => {
   //TODO Map this array of objects and display the users in ProfileCard
   const team = await getTeam()
-
+  // console.log(team)
   return (
     <section className="body-font">
       <div className="container px-5 py-24 mx-auto">
@@ -16,7 +16,7 @@ const Team = async () => {
           <p className="lg:w-2/3 mx-auto dark:text-gray-300 leading-relaxed text-base">At the heart of our projects success lies our exceptional tech team. Comprised of talented individuals with a shared passion for technology and innovation, our team is dedicated to delivering top-notch solutions and driving the project forward. With their expertise, creativity, and collaborative spirit, they ensure that our project stands out from the rest.</p>
         </div>
         <div className="flex flex-col lg:flex-row m-auto justify-around items-center sm:items-start">
-          {/* {
+          {
             team.map((item, index) => {
               return (
               <Suspense key={index} fallback={<TeamSkeleton/>}>
@@ -24,12 +24,11 @@ const Team = async () => {
                   name={item.name}
                   bio={item.bio}
                   designation={item.designation}
-                  instagram={item.instagram}
-                  github={item.github}
-                  pfp={item.pfp} /></Suspense>
+                  pfp={item.image} /></Suspense>
               )
             })
-          } */}
+          }
+
         </div>
       </div>
     </section>

@@ -26,10 +26,10 @@ const ProfileCard = async ({ name, bio, designation, pfp, github, instagram }: T
             <h3 className="mb-3 text-slate-400">{designation}</h3>
             <p className=" text-slate-500 mb-4">{bio}</p>
             <span className='inline-flex gap-3'>
-              <Link href={`https://www.instagram.com/${instagram}/`} target='_blank' className='text-gray-500'>
+              <Link href={`https://www.instagram.com/`} target='_blank' className='text-gray-500'>
                 <BsInstagram className="w-6 h-6 text-gray-400 hover:text-gray-600 hover:dark:text-gray-200" />
               </Link>
-              <Link href={`https://www.github.com/${github}/`} target='_blank'><BsGithub className="w-6 h-6 text-gray-400 hover:text-gray-600 hover:dark:text-gray-200" /></Link>
+              <Link href={`https://www.github.com/`} target='_blank'><BsGithub className="w-6 h-6 text-gray-400 hover:text-gray-600 hover:dark:text-gray-200" /></Link>
             </span>
   
           </div>
