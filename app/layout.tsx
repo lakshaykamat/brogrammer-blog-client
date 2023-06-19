@@ -3,11 +3,6 @@ import { getLayout } from '@/lib/getLayout'
 import { usePathname } from 'next/navigation'
 import './globals.css'
 
-export const metadata = {
-  title: 'Brogrammer Blog',
-  description: 'Brogrammer blog Page',
-}
-
 
 export default function RootLayout({
   children,

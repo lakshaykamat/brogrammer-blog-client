@@ -12,36 +12,6 @@ const Home = async () => {
 
   const posts = await fetchAllBlogs()
   const catgories = await fetchCategories()
-  // useEffect(() => {
-  //   // Initialize ScrollReveal
-  //   ScrollReveal().reveal('.animate', {
-  //     // Animation options and settings
-  //     duration: 1000,
-  //     distance: '20px',
-  //     easing: 'ease',
-  //     // More configuration options...
-  //   });
-  // }, []);
-  // useEffect(() => {
-  //   // Initialize ScrollReveal
-  //   ScrollReveal().reveal('.animate2', {
-  //     // Animation options and settings
-  //     duration: 2000,
-  //     distance: '30px',
-  //     easing: 'ease',
-  //     // More configuration options...
-  //   });
-  // }, []);
-  // useEffect(() => {
-  //   // Initialize ScrollReveal
-  //   ScrollReveal().reveal('.animate3', {
-  //     // Animation options and settings
-  //     duration: 3000,
-  //     distance: '40px',
-  //     easing: 'ease',
-  //     // More configuration options...
-  //   });
-  // }, []);
 
   return (
     <div>

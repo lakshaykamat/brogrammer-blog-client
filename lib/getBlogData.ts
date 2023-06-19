@@ -1,16 +1,16 @@
 import axios from "axios";
-import { getToken } from "./getToken";
+// import { getToken } from "./getToken";
 import { BlogPost } from "@/types"
 
 
 export const getBlogData = async(id:string):Promise<BlogPost>=>{
-  const token = await getToken()
+  // const token = await getToken()
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
         url: `${process.env.API_URL}blog?slug=${id}`,
         headers: { 
-          
+          'Content-Type': 'application/json'
         }
       };
       try {

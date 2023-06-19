@@ -25,3 +25,4 @@ export type Team = Array<{
   __v: number
 }>
 
+export type Categories = Array<string>

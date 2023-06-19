@@ -1,15 +1,15 @@
 import axios from "axios";
-import { getToken } from "./getToken";
+// import { getToken } from "./getToken";
 import {Categories } from "@/types"
 
 export const getCategories = async ():Promise<Categories> => {
-  const token = await getToken()
+  // const token = await getToken()
   let config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `https://portfilio-blog-page.onrender.com/api/blog/category/all`,
+    url: `${process.env.API_URL}blog/category/all`,
     headers: {
-      
+      'Content-Type': 'application/json'
     }
   };
   try {

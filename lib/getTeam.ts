@@ -1,15 +1,15 @@
 import axios from "axios";
-import { getToken } from "./getToken";
+// import { getToken } from "./getToken";
 import { Team } from "@/types";
 
 export const getTeam = async (): Promise<Team> => {
     //TODO Remove this line no 7
-    const token = await getToken()
+    // const token = await getToken()
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
         url: `${process.env.API_URL}user/all`,
-        headers: {}
+        headers: { 'Content-Type': 'application/json'}
     };
 
 

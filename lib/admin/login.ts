@@ -8,7 +8,7 @@ export const login = async(email:string,password:string)=>{
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: `https://portfilio-blog-page.onrender.com/api/user/login`,
+        url: `${process.env.API_URL}user/login`,
         headers: { 
           'Content-Type': 'application/json'
         },
