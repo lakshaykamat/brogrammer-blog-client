@@ -1,0 +1,25 @@
+{
+    "background_color": "#ffffff",
+    "description": "Brogrammer Blog",
+    "dir": "ltr",
+    "display": "standalone",
+    "name": "brogrammerblog.netlify",
+    "orientation": "any",
+    "scope": "/",
+    "short_name": "brogrammerblog.netlify",
+    "start_url": "/",
+    "theme_color": "#ffffff",
+    "categories": [
+      "education",
+      "productivity"
+    ],
+    "screenshots": [],
+    "icons": [],
+    "shortcuts": [
+      {
+        "name": "show",
+        "url": "https://brogrammerblog.netlify.app/",
+        "description": ""
+      }
+    ]
+  }
