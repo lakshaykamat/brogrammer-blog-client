@@ -8,11 +8,8 @@ import Image from 'next/image';
 import {notFound} from 'next/navigation'
 
 export const generateMetadata = async ({ params }: { params: { postId: string } }) => {
-
     const { postId } = params
-    const post = await fetchBlogContent(postId)
-
-    
+    const post = await fetchBlogContent(postId)   
 
     if (post.length <= 0) {
         return {
@@ -22,15 +19,12 @@ export const generateMetadata = async ({ params }: { params: { postId: string } 
     const postData = post[0]
     const postTitle = postData.title
     return {
-        title: postTitle
+        title: postTitle,
+        description: postData.description,
     }
 }
-// export async function generateStaticParams() {
-//     const blog = await fetchAllBlogs()
-//     return blog.map((item) => {
-//         { postId: item.slug }
-//     })
-// }
+
+
 const page = async ({ params }: { params: { postId: string } }) => {
 
     const { postId } = params
