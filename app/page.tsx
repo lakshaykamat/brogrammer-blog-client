@@ -19,7 +19,7 @@ const Home = async () => {
       <CTA categories={catgories} />
 
 
-      <div className="m-12 xl:mx-48">
+      <div className="mx-6 my-12 md:mx-16 xl:mx-24 ">
         <h1 className="text-3xl font-bold">Most Recent Posts</h1>
         <hr className="h-1 my-6 bg-gray-600" />
 

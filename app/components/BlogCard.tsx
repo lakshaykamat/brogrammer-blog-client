@@ -15,31 +15,27 @@ type Props = {
 }
 
 const BlogCard = async ({ imgURL, altTxt, creationDate, author, slug, title, width }: Props) => {
-  
+
 
   const size = await getHeightAndWidth(imgURL)
 
 
   return (
-
-    <div className={`${width == "HALF" ? "w-auto md:w-[50%]" : "overflow-hidden items-center text-gray-800 dark:text-slate-200 justify-stretch rounded-lg"} `}>
-      <div>
-        <Image src={imgURL} alt={altTxt} className="transition-all hover:scale-105 w-full h-auto object-cover mb-4 rounded-lg" width={size.width} height={size.height} priority/>
+    <Link
+      href={`/${slug}`}
+      className="text-lg xl:text-2xl mb-4 mt-2 font-bold"
+    >
+      <div className={`${width == "HALF" ? "w-auto md:w-[50%]" : "overflow-hidden items-center text-gray-800 dark:text-slate-200 justify-stretch rounded-lg"} `}>
+        <div>
+          <Image src={imgURL} alt={altTxt} className="transition-all hover:scale-105 w-full h-auto object-cover mb-4 rounded-lg" width={size.width} height={size.height} priority />
+        </div>
+        <div className="mt-auto text-sm flex gap-3">
+          <p>{getFormattedDate(creationDate)}</p>
+          <p>{author}</p>
+        </div>
+        <h1 className="flex flex-col">{title}</h1>
       </div>
-      <div className="mt-auto text-sm flex gap-3">
-        <p>{getFormattedDate(creationDate)}</p>
-        <p>{author}</p>
-      </div>
-      <div className="flex flex-col">
-        <Link
-          href={`/${slug}`}
-          className="text-lg xl:text-2xl mb-4 mt-2 font-bold"
-        >
-          {title}
-        </Link>
-        
-      </div>
-    </div>
+    </Link>
 
 
   )
