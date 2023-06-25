@@ -8,7 +8,7 @@ type Props = {
 const CTA = ({categories}: Props) => {
 
     return (
-        <div className='m-12 xl:mx-48'>
+        <div className='mx-6 my-12 md:mx-16 xl:mx-24'>
             <div className='flex gap-3 flex-col my-3'>
                 <h1 className='text-3xl xl:text-4xl font-bold'>Brogramer Blog</h1>
                 <p className='text-lg xl:text-xl md:w-[80%]'>Get tips and advice on delivering exceptional customer service, engaging and delighting your customers, and building a customer-centric company.</p>
