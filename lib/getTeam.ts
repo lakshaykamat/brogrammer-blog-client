@@ -8,7 +8,7 @@ export const getTeam = async (): Promise<Team> => {
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: `${process.env.API_URL}user/all`,
+        url: `https://portfilio-blog-page.onrender.com/api/user/all`,
         headers: { 'Content-Type': 'application/json'}
     };
 

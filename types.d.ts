@@ -1,4 +1,4 @@
-export type BlogPost = Array<{
+export type BlogPost = {
   _id: string
   title: string
   image: string
@@ -11,7 +11,7 @@ export type BlogPost = Array<{
   createdAt: string
   updatedAt: string
   __v: number
-}>
+}
 
 export type Team = Array<{
   _id: string

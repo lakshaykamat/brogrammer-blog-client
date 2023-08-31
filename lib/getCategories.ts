@@ -7,7 +7,7 @@ export const getCategories = async ():Promise<Categories> => {
   let config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `http://localhost:8000/api/blog/category/all`,
+    url: `https://portfilio-blog-page.onrender.com/api/blog/category/all`,
     headers: {
       'Content-Type': 'application/json'
     }

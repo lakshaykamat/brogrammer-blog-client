@@ -9,7 +9,7 @@ import { notFound } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import {Helmet} from 'react-helmet'
 
-const page =  ({ params }: { params: { postId: string } }) => {
+const BlogView =  ({ params }: { params: { postId: string } }) => {
   const { postId } = params;
   const md = new MarkdownIt();
 
@@ -17,9 +17,6 @@ const page =  ({ params }: { params: { postId: string } }) => {
     queryKey: ["fetch_a_blog"],
     queryFn: () => fetchBlogContent(postId),
   });
-
-  // const post = await fetchBlogContent(postId)
-  // if(post.length <= 0) return notFound()
   if (BLOG.isLoading) {
     return <h1>Loading...</h1>;
   }
@@ -58,4 +55,4 @@ const page =  ({ params }: { params: { postId: string } }) => {
   }
 };
 
-export default page;
+export default BlogView;

@@ -2,12 +2,12 @@ import { BlogPost } from "@/types"
 import axios from "axios";
 // import { getToken } from "./getToken";
 
-export const getBlogsByCategory = async (category:string):Promise<BlogPost> => {
+export const getBlogsByCategory = async (category:string):Promise<BlogPost[]> => {
     // const token = await getToken()
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: `http://localhost:8000/api/blog?category=${category}`,
+        url: `https://portfilio-blog-page.onrender.com/api/blog?category=${category}`,
         headers: {
             'Content-Type': 'application/json'
         }

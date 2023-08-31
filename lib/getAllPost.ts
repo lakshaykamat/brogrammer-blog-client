@@ -1,14 +1,14 @@
 import { BlogPost } from "@/types"
 import axios from 'axios'
 // import { getToken } from './getToken';
-export default async function getAllPost():Promise<BlogPost> {
+export default async function getAllPost():Promise<BlogPost[]> {
   // const token = await getToken()
 
 
   let config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `http://localhost:8000/api/blog`,
+    url: `https://portfilio-blog-page.onrender.com/api/blog`,
     headers: { 'Content-Type': 'application/json' }
   };
 

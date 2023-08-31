@@ -5,7 +5,7 @@ import { getCategories } from "./getCategories"
 import { getBlogsByCategory } from "./getBlogByCategory"
 import { getTeam } from "./getTeam"
 
-export const fetchAllBlogs = async (): Promise<BlogPost> => {
+export const fetchAllBlogs = async (): Promise<BlogPost[]> => {
     return await getAllPost()
 }
 export const fetchBlogContent = async (postId: string): Promise<BlogPost> => {
@@ -14,7 +14,7 @@ export const fetchBlogContent = async (postId: string): Promise<BlogPost> => {
 export const fetchCategories = async (): Promise<Categories> => {
     return await getCategories()
 }
-export const fetchBlogsByCategory = async (category: string):Promise<BlogPost> => {
+export const fetchBlogsByCategory = async (category: string):Promise<BlogPost[]> => {
     return await getBlogsByCategory(category)
 }
 export const fetchTeam = async():Promise<Team>=>{

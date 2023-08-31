@@ -7,7 +7,7 @@ export const getBlogData = async(id:string):Promise<BlogPost>=>{
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: `http://localhost:8000/api/blog?slug=${id}`,
+        url: `https://portfilio-blog-page.onrender.com/api/blog?slug=${id}`,
         headers: { 
           'Content-Type': 'application/json'
         }
