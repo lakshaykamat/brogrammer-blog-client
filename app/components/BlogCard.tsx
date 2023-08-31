@@ -1,3 +1,4 @@
+"use client"
 import getFormattedDate from '@/utils/getFormattedDate'
 import { getHeightAndWidth } from '@/utils/getHeightAndWidth'
 import Image from 'next/image'
@@ -14,23 +15,22 @@ type Props = {
   width: string
 }
 
-const BlogCard = async ({ imgURL, altTxt, creationDate, author, slug, title, width }: Props) => {
+const BlogCard =  ({ imgURL, altTxt, creationDate, author, slug, title, width }: Props) => {
 
-
-  const size = await getHeightAndWidth(imgURL)
+  // const size = await getHeightAndWidth(imgURL)
 
 
   return (
     <Link
       href={`/${slug}`}
-      className="text-lg xl:text-2xl mb-4 mt-2 font-bold"
+      className="mt-2 mb-4 text-lg font-bold xl:text-2xl"
     >
       <div className={`${width == "HALF" ? "w-auto md:w-[50%]" : "overflow-hidden items-center text-gray-800 dark:text-slate-200 justify-stretch rounded-lg"} `}>
         <div>
-          <Image src={imgURL} alt={altTxt} className="transition-all hover:scale-105 w-full h-auto object-cover mb-4 rounded-lg" width={size.width} height={size.height} priority />
+          <Image src={imgURL} alt={altTxt} className="object-cover w-full h-auto mb-4 transition-all rounded-lg hover:scale-105" width={500} height={300} priority />
         </div>
-        <div className="mt-auto text-sm flex gap-3">
-          <p>{getFormattedDate(creationDate)}</p>
+        <div className="flex gap-3 mt-auto text-sm">
+          <p>{creationDate}</p>
           <p>{author}</p>
         </div>
         <h1 className="flex flex-col">{title}</h1>

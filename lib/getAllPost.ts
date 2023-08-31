@@ -8,13 +8,13 @@ export default async function getAllPost():Promise<BlogPost> {
   let config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `${process.env.API_URL}blog`,
+    url: `http://localhost:8000/api/blog`,
     headers: { 'Content-Type': 'application/json' }
   };
 
 
   try {
-    const response = await axios.request(config);
+    const response = await axios.request(config)
     return response.data
   }
   catch (error) {

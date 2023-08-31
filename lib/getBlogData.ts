@@ -1,5 +1,4 @@
 import axios from "axios";
-// import { getToken } from "./getToken";
 import { BlogPost } from "@/types"
 
 
@@ -8,7 +7,7 @@ export const getBlogData = async(id:string):Promise<BlogPost>=>{
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: `${process.env.API_URL}blog?slug=${id}`,
+        url: `http://localhost:8000/api/blog?slug=${id}`,
         headers: { 
           'Content-Type': 'application/json'
         }

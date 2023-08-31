@@ -7,7 +7,7 @@ export const getBlogsByCategory = async (category:string):Promise<BlogPost> => {
     let config = {
         method: 'get',
         maxBodyLength: Infinity,
-        url: `${process.env.API_URL}blog?category=${category}`,
+        url: `http://localhost:8000/api/blog?category=${category}`,
         headers: {
             'Content-Type': 'application/json'
         }

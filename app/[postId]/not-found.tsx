@@ -1,13 +1,13 @@
+"use client"
 import Link from 'next/link'
-import React from 'react'
+import {Helmet} from 'react-helmet'
 
-type Props = {}
-
-const NotFound = (props: Props) => {
+const NotFound = () => {
   return (
-    <div className="max-w-fit my-28 flex flex-col justify-center items-center mx-auto px-4 py-8">
+    <div className="flex flex-col items-center justify-center px-4 py-8 mx-auto max-w-fit my-28">
+      <Helmet> <title>404 | Not Found</title></Helmet>
     <div>
-    <h1 className="text-3xl font-bold mb-4">Blog Not Found</h1>
+    <h1 className="mb-4 text-3xl font-bold">Blog Not Found</h1>
 
     <p className="mb-4">The requested blog could not be found. Please check the URL or go back to the homepage.</p>
     <Link href="/">

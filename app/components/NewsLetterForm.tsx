@@ -7,7 +7,6 @@ const NewsletterForm: React.FC = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         // Handle form submission, e.g., send the email to your newsletter service
-        console.log(email);
         setEmail('');
     };
 
@@ -18,8 +17,8 @@ const NewsletterForm: React.FC = () => {
     return (
         <div className="bg-[#0D567A] text-slate-200 dark:text-gray-800 dark:bg-sky-200 p-8 py-14 flex flex-col xl:flex-row justify-around items-center">
             <div>
-                <h2 className="text-3xl font-bold mb-4">Get our best content in your inbox</h2>
-                <p className="text-slate-300 dark:text-gray-500 mb-4 text-sm">
+                <h2 className="mb-4 text-3xl font-bold">Get our best content in your inbox</h2>
+                <p className="mb-4 text-sm text-slate-300 dark:text-gray-500">
                 All the tips, stories, and resources you could ever need or want — straight to your email!
                 </p>
             </div>
@@ -40,7 +39,7 @@ const NewsletterForm: React.FC = () => {
                     </button>
                 </div>
 
-                <div className=' mb-3'>
+                <div className='mb-3 '>
                     <input type="checkbox" className='accent-sky-200 dark:accent-[#0a4360] mr-3' />
                     <label>I agree to receive content from Brogrammer</label>
                 </div>

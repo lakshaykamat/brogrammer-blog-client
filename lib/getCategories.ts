@@ -7,7 +7,7 @@ export const getCategories = async ():Promise<Categories> => {
   let config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `${process.env.API_URL}blog/category/all`,
+    url: `http://localhost:8000/api/blog/category/all`,
     headers: {
       'Content-Type': 'application/json'
     }
