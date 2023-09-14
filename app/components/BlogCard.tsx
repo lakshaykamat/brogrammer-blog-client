@@ -30,7 +30,7 @@ const BlogCard =  ({ imgURL, altTxt, creationDate, author, slug, title, width }:
           <Image src={imgURL} alt={altTxt} className="object-cover w-full h-auto mb-4 transition-all rounded-lg hover:scale-105" width={500} height={300} priority />
         </div>
         <div className="flex gap-3 mt-auto text-sm">
-          <p>{creationDate}</p>
+          <p>{getFormattedDate(creationDate)}</p>
           <p>{author}</p>
         </div>
         <h1 className="flex flex-col">{title}</h1>

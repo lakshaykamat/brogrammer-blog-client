@@ -1,7 +1,6 @@
 "use client"
 import BlogCard from '@/app/components/BlogCard'
-import CardSkeleton from '@/app/components/CardSkeleton'
-import { fetchBlogsByCategory, fetchCategories } from '@/lib/fetchData'
+import { fetchBlogByCategory } from '@/lib'
 import { removePercentEncoding } from '@/utils/removePercentEncoding'
 import { useQuery } from '@tanstack/react-query'
 
@@ -12,18 +11,18 @@ const CategoryPage = ({ params }: { params: { categoryId: string } }) => {
     // const data =  fetchBlogsByCategory(categoryName)
     const CATEGORIES = useQuery({
       queryKey: ["fetch_categoriesss"],
-      queryFn: () => fetchBlogsByCategory(categoryName),
+      queryFn: () => fetchBlogByCategory(categoryName),
     });
-     const blogCards = CATEGORIES.data && CATEGORIES.data.map((item, index) => {
+     const blogCards = CATEGORIES.data && CATEGORIES.data.data.map((item, index) => {
        return( <BlogCard
          key={index}
            width="FULL"
-           imgURL={item.image}
-           altTxt={item.title}
-           creationDate={item.publishedAt}
-           author={item.author}
-           slug={item.slug}
-           title={item.title}
+           imgURL={item.attributes.image}
+           altTxt={item.attributes.title}
+           creationDate={item.attributes.publishedAt}
+           author={item.attributes.author}
+           slug={item.attributes.slug}
+           title={item.attributes.title}
        />
        )
    })

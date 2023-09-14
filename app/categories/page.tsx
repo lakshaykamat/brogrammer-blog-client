@@ -1,8 +1,8 @@
 "use client"
-import { fetchCategories } from '@/lib/fetchData'
 import Link from 'next/link'
 import React from 'react'
 import { useQuery } from '@tanstack/react-query'
+import { fetchCategories } from '@/lib'
 
 
 const Categories = () => {
@@ -18,8 +18,8 @@ const Categories = () => {
             <hr className='mb-3'/>
             <section className="grid grid-cols-1 gap-6 justify-self-stretch sm:grid-cols-2 xl:grid-cols-3">
                 {
-                    CATEGORIES.data && CATEGORIES.data.map((item,index)=>{
-                        return <CategoryButton key={index} name={item}/>
+                    CATEGORIES.data && CATEGORIES.data.data.map((item,index)=>{
+                        return <CategoryButton key={index} name={item.attributes.name}/>
                     })
                 }
             </section>
