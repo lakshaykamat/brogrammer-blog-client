@@ -50,6 +50,7 @@ const Team = () => {
             return (
               // <Suspense key={index} fallback={<TeamSkeleton />}>
                 <ProfileCard
+                key={item._id}
                   name={item.name}
                   bio={item.bio}
                   designation={item.designation}

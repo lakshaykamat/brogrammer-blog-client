@@ -1,18 +1,4 @@
-// export type BlogPost = {
-//   _id: string
-//   title: string
-//   image: string
-//   description: string
-//   body: string
-//   publishedAt: string
-//   slug: string
-//   category: string
-//   author: string,
-//   createdAt: string
-//   updatedAt: string
-//   __v: number
-// }
-export type BlogPost = {
+export type Blog = {
   data: Array<{
     id: number
     attributes: {
@@ -27,20 +13,8 @@ export type BlogPost = {
       updatedAt: string
       publishedAt: string
       locale: string
-      category: {
-        data: {
-          id: number
-          attributes: {
-            name: string
-            createdAt: string
-            updatedAt: string
-            publishedAt: string
-          }
-        }
-      }
-      localizations: {
-        data: Array<any>
-      }
+      seo_title: string
+      seo_description: string
     }
   }>
   meta: {

@@ -5,8 +5,8 @@ type Props = {};
 const Footer = (props: Props) => {
   return (
 
-<footer className="bg-sky-600 dark:bg-sky-900 text-slate-200">
-    <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+<footer className="bg-sky-800 dark:bg-sky-900 text-slate-200">
+    <div className="w-full max-w-screen-xl p-4 py-6 mx-auto lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
               <a href="" className="flex items-center">
@@ -17,7 +17,7 @@ const Footer = (props: Props) => {
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
                   <h2 className="mb-6 text-sm font-semibold uppercase text-slate-100">Our Apps</h2>
-                  <ul className="text-slate-100 font-medium">
+                  <ul className="font-medium text-slate-100">
                       <li className="mb-4">
                           <a href="https://flowbite.com/" className="hover:underline">Quizes</a>
                       </li>
@@ -28,7 +28,7 @@ const Footer = (props: Props) => {
               </div>
               <div>
                   <h2 className="mb-6 text-sm font-semibold uppercase text-slate-100">Follow us</h2>
-                  <ul className="text-slate-100 font-medium">
+                  <ul className="font-medium text-slate-100">
                       <li className="mb-4">
                           <a href="https://github.com/themesberg/flowbite" className="hover:underline ">Github</a>
                       </li>
@@ -39,7 +39,7 @@ const Footer = (props: Props) => {
               </div>
               <div>
                   <h2 className="mb-6 text-sm font-semibold uppercase text-slate-100">Legal</h2>
-                  <ul className="text-slate-100 font-medium">
+                  <ul className="font-medium text-slate-100">
                       <li className="mb-4">
                           <a href="#" className="hover:underline">Privacy Policy</a>
                       </li>
@@ -55,10 +55,10 @@ const Footer = (props: Props) => {
           <span className="text-sm text-slate-200 dark:text-slate-100 sm:text-center">© 2023 <a href="https://flowbite.com/" className="hover:underline">Brogrammer</a>. All Rights Reserved.
           </span>
           <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-              <BsFacebook className="text- w-6 h-6 hover:text-slate-900 dark:hover:text-white"/>
-              <BsInstagram className="text-white w-6 h-6 hover:text-slate-900 dark:hover:text-white"/>
-              <BsTwitter className="text-white w-6 h-6 hover:text-slate-900 dark:hover:text-white"/>
-              <BsGithub className="text-white w-6 h-6 hover:text-slate-900 dark:hover:text-white"/>
+              <BsFacebook className="w-6 h-6 text- hover:text-slate-900 dark:hover:text-white"/>
+              <BsInstagram className="w-6 h-6 text-white hover:text-slate-900 dark:hover:text-white"/>
+              <BsTwitter className="w-6 h-6 text-white hover:text-slate-900 dark:hover:text-white"/>
+              <BsGithub className="w-6 h-6 text-white hover:text-slate-900 dark:hover:text-white"/>
           </div>
       </div>
     </div>

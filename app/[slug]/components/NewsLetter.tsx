@@ -14,17 +14,17 @@ type Props = {
 
 const NewsLetter = ({ title, url, hastag }: Props) => {
     return (
-        <section className="py-8">
-            <div className="container mx-auto px-4">
-                <span className="block text-2xl text-slate-600 dark:text-slate-200 font-bold mb-3">Subscribe to Our Newsletter</span>
-                <span className="block text-sm text-slate-500 dark:text-slate-300 mb-6">
+        <section className="py-8 xl:h-screen xl:fixed xl:right-10 xl:top-20">
+            <div className="container px-4 mx-auto">
+                <span className="block mb-3 text-2xl font-bold text-slate-600 dark:text-slate-200">Subscribe to Our Newsletter</span>
+                <span className="block mb-6 text-sm text-slate-500 dark:text-slate-300">
                     Stay up to date with the latest articles, news, and updates from our blog.
                 </span>
                 <form className="flex flex-col md:flex-row">
                     <input
                         type="email"
                         placeholder="Enter your email"
-                        className="w-full text-base md:w-64 py-2 px-4 rounded-l-md mb-2 md:mb-0 focus:outline-none"
+                        className="w-full px-4 py-2 mb-2 text-base md:w-64 rounded-l-md md:mb-0 focus:outline-none"
                         required
                     />
                     <button
